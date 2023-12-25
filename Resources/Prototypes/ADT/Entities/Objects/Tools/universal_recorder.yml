@@ -5,7 +5,7 @@
   description: [tool_universal_recorder-desc]
   components:
   - type: Sprite
-    sprite: dfasda.rsi
+    sprite: 11111111111111111111111111.rsi
   - type: ItemSlots
     slots:
       recordable_flash:
@@ -24,4 +24,8 @@
   description: [item_recordable_flash-desc]
   components:
   - type: Sprite
-    sprite: dfasda.rsi
+    sprite: 11111111111111111111111111.rsi
+  - type: Item
+    sprite: 11111111111111111111111111.rsi
+    size: Small
+

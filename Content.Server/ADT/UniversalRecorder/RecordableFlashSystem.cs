@@ -1,9 +1,9 @@
-using Content.Shared;
+using Content.Shared.ADT.UniversalRecorder;
 using Content.Shared.Chat;
 
-namespace Content.Shared.ADT.UniversalRecorder;
+namespace Content.Server.ADT.UniversalRecorder;
 
-public sealed partial class UniversalRecorderSystem : EntitySystem
+public sealed partial class RecordableFlashSystem : EntitySystem
 {
     public override void Initialize()
     {
@@ -11,7 +11,7 @@ public sealed partial class UniversalRecorderSystem : EntitySystem
 
     }
 
-    public bool TryRecordMessage(ChatMessage message, ref UniversalRecorderComponent component)
+    public bool TryRecordMessage(ChatMessage message, ref RecordableFlashComponent component)
     {
         if (message.Channel != ChatChannel.IC)
             return false;
