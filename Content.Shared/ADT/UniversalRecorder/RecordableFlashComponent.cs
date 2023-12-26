@@ -13,6 +13,7 @@ public sealed partial class RecordableFlashComponent : Component
 
     public List<RecordedMessage> Records = new List<RecordedMessage>();
 
+    public int CurrentTime { get; set; }
 }
 
 public struct RecordedMessage
@@ -22,7 +23,7 @@ public struct RecordedMessage
     public string? verb;
     public string? message;
     // TTS sound
-    public string? action; // started/finished recording
+    public string? action; // "started/finished recording" field
 
     public string WrapMessage(RecordedMessage message)
     {
