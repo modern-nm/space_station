@@ -1,0 +1,31 @@
+- type: entity
+  name: universal recorder
+  parent: BaseItem
+  id: ToolUniversalRecorder
+  description: [tool_universal_recorder-desc]
+  components:
+  - type: Sprite
+    sprite: 11111111111111111111111111.rsi
+  - type: ItemSlots
+    slots:
+      recordable_flash:
+        name: [recordable_flash-name]
+        startingItem:
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        whitelist:
+          tags:
+            - RecordableFlash
+
+- type: entity
+  name: recordable flash
+  parent: BaseItem
+  id: ItemRecordableFlash
+  description: [item_recordable_flash-desc]
+  components:
+  - type: Sprite
+    sprite: 11111111111111111111111111.rsi
+  - type: Item
+    sprite: 11111111111111111111111111.rsi
+    size: Small
+
