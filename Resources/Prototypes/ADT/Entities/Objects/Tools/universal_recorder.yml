@@ -2,30 +2,43 @@
   name: universal recorder
   parent: BaseItem
   id: ToolUniversalRecorder
-  description: [tool_universal_recorder-desc]
+  description: fds
   components:
   - type: Sprite
-    sprite: 11111111111111111111111111.rsi
+    sprite: Objects\Fun\bikehorn.rsi
+    state: icon
   - type: ItemSlots
     slots:
       recordable_flash:
-        name: [recordable_flash-name]
+        name: recordable_flash-name
         startingItem:
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         whitelist:
           tags:
             - RecordableFlash
+  - type: ContainerContainer
+    containers:
+      recordable_flash: !type:ContainerSlot
+  - type: UniversalRecorder
 
 - type: entity
   name: recordable flash
   parent: BaseItem
   id: ItemRecordableFlash
-  description: [item_recordable_flash-desc]
+  description: fsd
   components:
   - type: Sprite
-    sprite: 11111111111111111111111111.rsi
+    sprite: Objects\Fun\cluwnehorn.rsi
+    state: icon
   - type: Item
-    sprite: 11111111111111111111111111.rsi
+    sprite: Objects\Fun\cluwnehorn.rsi
     size: Small
+  - type: RecordableFlash
+    capacity: 600
+  - type: Tag
+    tags:
+    - RecordableFlash
 
+- type: Tag
+  id: RecordableFlash

@@ -4,6 +4,7 @@ using Robust.Shared.Toolshed.Commands.GameTiming;
 namespace Content.Shared.ADT.UniversalRecorder;
 
 [RegisterComponent]
+[Access(typeof(SharedRecordableFlashSystem))]
 public sealed partial class RecordableFlashComponent : Component
 {
     [DataField("capacity")]
@@ -25,15 +26,16 @@ public struct RecordedMessage
     // TTS sound
     public string? action; // "started/finished recording" field
 
-    public string WrapMessage(RecordedMessage message)
+    public string WrapMessage(/*RecordedMessage message*/)
     {
-        if (message.action != null)
+
+        if (action != null)
         {
-            return message.time.ToString() + " " + message.action;
+            return time.ToString() + " " + action;
         }
-        if (message.message != null)
+        if (message != null)
         {
-            return message.time.ToString() + " " + message.sourceName + " " + message.verb + " " + message.message;
+            return time.ToString() + " " + sourceName + " " + verb + " " + message;
         }
         return "error";
     }
