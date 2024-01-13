@@ -218,6 +218,13 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gun.FireRate <= 0f ||
             !_actionBlockerSystem.CanUseHeldEntity(user))
             return;
+        ///ADT-Personal-Gun block start
+        if (gun.Personable)
+        {
+            if (gun.GunOwner?.Id != user.Id)
+                return;
+        }
+        ///ADT-Personal-Gun block end
 
         var toCoordinates = gun.ShootCoordinates;
 

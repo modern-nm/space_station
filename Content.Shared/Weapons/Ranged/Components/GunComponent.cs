@@ -167,6 +167,19 @@ public partial class GunComponent : Component
     /// </summary>
     [DataField("clumsyProof"), ViewVariables(VVAccess.ReadWrite)]
     public bool ClumsyProof = false;
+
+    /// <summary>
+    /// ADT. personableWeapon field
+    /// </summary>
+    [DataField("personable"), ViewVariables(VVAccess.ReadWrite)]
+    public bool Personable = false;
+
+    /// <summary>
+    /// ADT. personableWeapon field
+    /// </summary>
+    //[DataField("gunOwner"), ViewVariables(VVAccess.ReadWrite)]
+    public EntityUid? GunOwner = null;
+
 }
 
 [Flags]
