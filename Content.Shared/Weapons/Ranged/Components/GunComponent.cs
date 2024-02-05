@@ -177,7 +177,7 @@ public partial class GunComponent : Component
     /// <summary>
     /// ADT. personableWeapon field
     /// </summary>
-    //[DataField("gunOwner"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("gunOwner"), ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? GunOwner = null;
 
 }

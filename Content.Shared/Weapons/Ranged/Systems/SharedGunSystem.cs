@@ -10,6 +10,7 @@ using Content.Shared.Examine;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Tag;
@@ -103,6 +104,16 @@ public abstract partial class SharedGunSystem : EntitySystem
             Log.Warning($"Initializing a map that contains an entity that is on cooldown. Entity: {ToPrettyString(uid)}");
 
         DebugTools.Assert((component.AvailableModes & component.SelectedMode) != 0x0);
+
+        if (TryComp<TransformComponent>(uid, out var comp))
+        {
+            if (TryComp<MobStateComponent>(comp.ParentUid, out _))
+            {
+                component.GunOwner = comp.ParentUid;
+                Log.Warning($"Initializing a map that contains entity-gun, which has been personalized to its parent. Entity: {ToPrettyString(uid)}");
+            }
+
+        }
 #endif
     }
 
