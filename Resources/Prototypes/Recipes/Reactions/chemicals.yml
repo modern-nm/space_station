@@ -10,6 +10,7 @@
 
 - type: reaction
   id: CelluloseBreakdown
+  source: true
   requiredMixerCategories:
   - Electrolysis
   reactants:
@@ -80,7 +81,7 @@
       amount: 1
     Sulfur:
       amount: 1
-    Oxygen: 
+    Oxygen:
       amount: 2
   products:
     SulfuricAcid: 3
@@ -217,6 +218,7 @@
 
 - type: reaction
   id: TableSaltBreakdown
+  source: true
   requiredMixerCategories:
   - Electrolysis
   reactants:
@@ -311,15 +313,15 @@
   impact: Medium
   reactants:
     Oil:
-      amount: 1
+      amount: 3
     Hydrogen:
       amount: 1
     Sugar:
-      amount: 1
+      amount: 2
     Diethylamine:
-     amount: 1
+     amount: 4
   products:
-    Ephedrine: 4
+    Ephedrine: 9
 
 - type: reaction
   id: MuteToxin
@@ -455,6 +457,7 @@
     SodiumHydroxide: 2
 
 - type: reaction
+  minTemp: 310
   id: Fersilicite
   reactants:
     Iron:

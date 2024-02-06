@@ -1,7 +1,5 @@
 using Content.Server.Storage.EntitySystems;
-using Content.Shared.Clothing.Components;
 using Content.Shared.Explosion;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Storage;
@@ -17,9 +15,6 @@ namespace Content.Server.Inventory
             base.Initialize();
 
             SubscribeLocalEvent<InventoryComponent, BeforeExplodeEvent>(OnExploded);
-
-            SubscribeLocalEvent<ClothingComponent, UseInHandEvent>(OnUseInHand);
-
             SubscribeNetworkEvent<OpenSlotStorageNetworkMessage>(OnOpenSlotStorage);
         }
 
@@ -34,18 +29,10 @@ namespace Content.Server.Inventory
             }
         }
 
-        private void OnUseInHand(EntityUid uid, ClothingComponent component, UseInHandEvent args)
-        {
-            if (args.Handled || !component.QuickEquip)
-                return;
-
-            QuickEquip(uid, component, args);
-        }
-
         private void OnOpenSlotStorage(OpenSlotStorageNetworkMessage ev, EntitySessionEventArgs args)
         {
             if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
-                    return;
+                return;
 
             if (TryGetSlotEntity(uid, ev.Slot, out var entityUid) && TryComp<StorageComponent>(entityUid, out var storageComponent))
             {
@@ -61,8 +48,8 @@ namespace Content.Server.Inventory
             var enumerator = new InventorySlotEnumerator(source.Comp);
             while (enumerator.NextItem(out var item, out var slot))
             {
-                if (TryUnequip(source, slot.Name, true, true, inventory: source.Comp))
-                    TryEquip(target, item, slot.Name , true, true, inventory: target.Comp);
+                if (!TryEquip(target, item, slot.Name, true, force: true))
+                    TryUnequip(source, slot.Name, true, force: true);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿# The progenitor. This should only container the most basic components possible.
+# The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
 - type: entity
   save: false
@@ -90,6 +90,9 @@
     soundHit:
       path: /Audio/Effects/hit_kick.ogg
   - type: Pullable
+  - type: LightningTarget
+    priority: 2
+    lightningExplode: false
 
 # Used for mobs that can enter combat mode and can attack.
 - type: entity
@@ -112,7 +115,7 @@
   components:
   - type: AtmosExposed
   - type: Temperature
-    heatDamageThreshold: 360
+    heatDamageThreshold: 325
     coldDamageThreshold: 0
     currentTemperature: 310.15
     coldDamage: #per second, scales with temperature & other constants
@@ -121,7 +124,7 @@
     specificHeat: 42
     heatDamage: #per second, scales with temperature & other constants
       types:
-        Heat : 0.1
+        Heat : 1.5
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -147,7 +150,7 @@
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 25
   - type: Temperature
-    heatDamageThreshold: 360
+    heatDamageThreshold: 325
     coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
@@ -156,11 +159,11 @@
         Cold: 1.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.1 #per second, scales with temperature & other constants
+        Heat: 1.5 #per second, scales with temperature & other constants
   - type: Barotrauma
     damage:
       types:
-        Blunt: 2 #per second, scales with pressure and other constants.
+        Blunt: 0.5 #per second, scales with pressure and other constants.
 
 # Used for mobs that can be set on fire
 - type: entity
@@ -173,7 +176,7 @@
     canResistFire: true
     damage: #per second, scales with number of fire 'stacks'
       types:
-        Heat: 1
+        Heat: 3
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning

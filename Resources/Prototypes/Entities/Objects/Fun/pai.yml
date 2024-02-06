@@ -1,11 +1,17 @@
 # Placeholder PAIs, aka semi-automatic ghost roles
 
+- type: Tag
+  id: ADTPAIEqepped
+
 - type: entity
   parent: BaseItem
   id: PersonalAI
   name: personal ai device
   description: Your electronic pal who's fun to be with!
   components:
+  - type: Tag
+    tags:
+    - ADTPAIEqepped
   - type: Instrument
     allowPercussion: false
     handheld: false
@@ -15,6 +21,8 @@
     interfaces:
     - key: enum.InstrumentUiKey.Key
       type: InstrumentBoundUserInterface
+    - key: enum.StationMapUiKey.Key
+      type: UntrackedStationMapBoundUserInterface
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
@@ -69,11 +77,12 @@
           Off: { state: pai-off-overlay }
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
+  - type: StationMap
 
 - type: entity
   parent: PersonalAI
   id: SyndicatePersonalAI
-  name: Syndicate personal ai device
+  name: syndicate personal ai device
   description: Your Syndicate pal who's fun to be with!
   components:
   - type: Sprite
@@ -140,3 +149,15 @@
     icon: Interface/Actions/pai-midi.png
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
+
+- type: entity
+  id: ActionPAIOpenMap
+  name: Open Map
+  description: Open your map interface and guide your owner.
+  noSpawn: true
+  components:
+    - type: InstantAction
+      checkCanInteract: false
+      icon: Interface/home.png
+      event: !type:OpenUiActionEvent
+        key: enum.StationMapUiKey.Key

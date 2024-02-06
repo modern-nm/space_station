@@ -1,6 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.Polymorph
 {
@@ -97,6 +98,14 @@ namespace Content.Shared.Polymorph
 
         [DataField("allowRepeatedMorphs", serverOnly: true)]
         public bool AllowRepeatedMorphs = false;
+
+        /// <summary>
+        /// The amount of time that should pass after this polymorph has ended, before a new one
+        /// can occur.
+        /// </summary>
+        [DataField("cooldown", serverOnly: true)]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public TimeSpan Cooldown = TimeSpan.Zero;
     }
 
     public enum PolymorphInventoryChange : byte
@@ -104,5 +113,13 @@ namespace Content.Shared.Polymorph
         None,
         Drop,
         Transfer,
+    }
+    public struct PolymorphHumanoidData
+    {
+        public EntityPrototype? EntityPrototype;
+        public MetaDataComponent? MetaDataComponent;
+        public HumanoidAppearanceComponent? HumanoidAppearanceComponent;
+        public string? DNA;
+        public EntityUid? EntityUid;
     }
 }

@@ -12,7 +12,7 @@ ent-ADTClothingNeckPyotrCloak = плащ Петра Шахина
 
 ent-ADTClothingNeckHoPAltCloak = торжественный плащ Главы Персонала
     .desc = Плащ Главы Персонала для особых случаев
-    .suffix = { "" }    
+    .suffix = { "" }
 
 ent-ADTClothingNeckDarkGreyCloak = темно-серый плащ
     .desc = Даже грейтайд заслуживает иметь свой плащ.
@@ -40,3 +40,9 @@ ent-ADTClothingNeckNewMekkaCloak = накидка Новой Мекки
 ent-ADTClothingNeckCloakLapkee = светлый плащ
     .desc = 50 оттенков белого для белых или не очень сотрудников.
     .suffix = { "Именное, Lapkee" }
+
+ent-ClothingNeckCloakVoid = пустотный плащ
+    .desc = Плащ тьмы. Для тех, кто перешел на темную сторону силы.
+
+ent-ADTClothingNeckMantleCentComm = наплечая мантия ЦентКома
+    .desc = Удобная наплечная накидка для высшего командного состава NanoTrasen.

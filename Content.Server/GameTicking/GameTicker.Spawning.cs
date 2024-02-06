@@ -10,6 +10,7 @@ using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -125,6 +126,16 @@ namespace Content.Server.GameTicking
         private void SpawnPlayer(ICommonSession player, EntityUid station, string? jobId = null, bool lateJoin = true, bool silent = false)
         {
             var character = GetPlayerProfile(player);
+            // Расы для спонсоров
+            var spices = _prototypeManager.Index<SpeciesPrototype>(character.Species);
+            if (spices.SponsorOnly)
+            {
+                if (!_sponsorsManager.TryGetInfo(player.UserId, out var sponsor))
+                        return;
+
+                if(sponsor.Tier <= 2)
+                    return;
+            }
 
             var jobBans = _banManager.GetJobBans(player.UserId);
             if (jobBans == null || jobId != null && jobBans.Contains(jobId))
@@ -230,7 +241,7 @@ namespace Content.Server.GameTicking
                     playDefaultSound: false);
             }
 
-            _stationJobs.TryAssignJob(station, jobPrototype);
+            _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);
 
             if (lateJoin)
                 _adminLogger.Add(LogType.LateJoin, LogImpact.Medium, $"Player {player.Name} late joined as {character.Name:characterName} on station {Name(station):stationName} with {ToPrettyString(mob):entity} as a {jobName:jobName}.");

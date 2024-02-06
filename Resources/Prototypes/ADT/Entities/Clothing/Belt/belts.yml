@@ -55,10 +55,7 @@
   name: ERT security belt
   description: Part of ERT security's gear
   components:
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-    - 0,0,10,7
+
   - type: StorageFill
     contents:
       - id: EmergencyMedipen
@@ -66,8 +63,6 @@
       - id: MagazinePistolHighCapacity
       - id: WeaponPistolViper
       - id: MedicatedSuture
-      - id: ExGrenade
-        amount: 3
 
 - type: entity
   id: ADTClothingBeltMilitaryWebbingRPSSL_Rev
@@ -76,11 +71,7 @@
   description: Part of ERT security's gear
   suffix: Anti-REV
   components:
-  - type: Storage
-    maxItemSize: Normal
-    #maxTotalWeight: 0
-    grid:
-    - 0,0,10,7
+
   - type: StorageFill
     contents:
       - id: EmergencyMedipen # Size 2
@@ -98,10 +89,6 @@
   name: ERT Leader belt
   description: Part of ERT leader's gear
   components:
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-    - 0,0,10,7
   - type: StorageFill
     contents:
       - id: EmergencyMedipen
@@ -109,8 +96,7 @@
       - id: MagazinePistolHighCapacity
       - id: WeaponPistolViper
       - id: MedicatedSuture
-      - id: ExGrenade
-        amount: 3
+      - id: ADTAdvancedHoloprojectorField
 
 - type: entity
   id: ADTClothingBeltMilitaryWebbingRPSL_Rev
@@ -119,20 +105,10 @@
   description: Part of ERT leader's gear
   suffix: Anti-REV
   components:
-  - type: Storage
-    maxItemSize: Normal
-    #maxTotalWeight: 0
-    grid:
-    - 0,0,10,7
   - type: StorageFill
     contents:
       - id: EmergencyMedipen
         amount: 2
-      #- id: MagazinePistolHighCapacity
-      #- id: WeaponPistolViper
-      #- id: MedicatedSuture
-      #- id: ExGrenade
-      #  amount: 3
       - id: ADTtelescopicBaton
       - id: Stunbaton
       - id: Flash
@@ -146,11 +122,6 @@
   name: ERT medical belt
   description: Part of ERT medical's gear
   components:
-  - type: Storage
-    maxItemSize: Normal
-    #maxTotalWeight: 0
-    grid:
-    - 0,0,10,7
   - type: StorageFill
     contents:
       - id: EmergencyMedipen
@@ -166,7 +137,7 @@
 #Pyotr
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltSheath
   id: ADTClothingBeltPyotrSheath
   name: Pyotr`s sabre sheath
   description: An ornate sheath designed to hold an officer's blade.
@@ -176,23 +147,28 @@
     state: sheath
   - type: Clothing
     sprite: ADT/Clothing/Belt/pyotr_sheath.rsi
-  - type: Storage
-    grid:
-    - 0,0,10,7
-    maxItemSize: Huge
-    whitelist:
-      tags:
-        - CaptainSabre
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        whitelist:
+          tags:
+          - CaptainSabre
   - type: ItemMapper
     mapLayers:
       sheath-sabre:
         whitelist:
           tags:
           - CaptainSabre
+  - type: ContainerFill
+    containers:
+      item:
+      - ADTPyotrSabre
   - type: Appearance
-  - type: StorageFill
-    contents:
-      - id: ADTPyotrSabre
 
 #кобура следователя СБ
 
@@ -264,3 +240,52 @@
   - type: Clothing
     sprite: ADT/Clothing/Belt/sec_auditor_holster.rsi
     quickEquip: true
+
+#офицерский ремень с кобурой
+
+- type: entity
+  id: ADTClothingBeltOfficersbeltwithholster
+  parent: ClothingBeltHolster
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+        - id: ADTWeaponPistolPMM
+        - id: MagazinePistol
+  - type: Sprite
+    sprite: ADT/Clothing/Belt/officers_belt_with_holster.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Belt/officers_belt_with_holster.rsi
+    quickEquip: true
+
+#рпс
+
+- type: entity
+  id: ADTClothingRPSUSSP
+  parent: ClothingBeltMilitaryWebbing
+  name: RPS USSP
+  description: RPS USSP
+  suffix: USSP
+  components:
+  - type: Storage
+    maxItemSize: Normal
+  - type: Sprite
+    sprite: ADT/Clothing/Belt/rps_ussp.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Belt/rps_ussp.rsi
+
+#тактический рпс
+
+- type: entity
+  id: ADTClothingRPSTacticalUSSP
+  parent: ClothingBeltMilitaryWebbing
+  name: RPS Tactical USSP
+  description: RPS Tactical USSP
+  suffix: USSP
+  components:
+  - type: Storage
+    maxItemSize: Normal
+  - type: Sprite
+    sprite: ADT/Clothing/Belt/rps_tactical_ussp.rsi
+  - type: Clothing
+    sprite: ADT/Clothing/Belt/rps_tactical_ussp.rsi

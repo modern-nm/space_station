@@ -102,6 +102,7 @@
   id: PlayerSiliconHumanoidBase
   abstract: true
   components:
+    - type: StatusIcon
     - type: MobState
       allowedStates:
         - Alive
@@ -246,7 +247,7 @@
         types:
           Blunt: 5
       soundHit:
-        path: /Audio/Effects/metalbreak.ogg
+        path: /Audio/Effects/metal_break1.ogg
     - type: LagCompensation
     - type: RangedDamageSound
       soundGroups:
@@ -354,7 +355,7 @@
       damageOverlayGroups:
         Brute:
           sprite: Mobs/Effects/brute_damage.rsi
-          color: "#DD8822"
+          color: "#1a1a1a"
         # Burn:
         #   sprite: Mobs/Effects/burn_damage.rsi
     # Organs

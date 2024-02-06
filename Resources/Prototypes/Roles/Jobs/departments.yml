@@ -48,6 +48,7 @@
   - ResearchDirector
   - Quartermaster
   - ADTBlueShieldOfficer
+  primary: false
 
 - type: department
   id: Engineering
@@ -88,6 +89,7 @@
   - Warden
   - Brigmedic
   - ADTInvestigator
+  - ADTSecurityCyborg
 
 - type: department
   id: Science
@@ -98,6 +100,7 @@
   - SeniorResearcher
   - Scientist
   - ResearchAssistant
+  - ADTRoboticist # ADT Roboticist job
 
 - type: department
   id: Specific
@@ -108,6 +111,7 @@
   - Reporter
   - Zookeeper
   - Psychologist
+  primary: false
 
 - type: department
   id: Law

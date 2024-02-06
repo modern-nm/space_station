@@ -10,8 +10,6 @@
     sprite: Objects/Devices/encryption_keys.rsi
   - type: Sprite
     sprite: Objects/Devices/encryption_keys.rsi
-  - type: StealTarget
-    stealGroup: EncryptionKey
 
 - type: entity
   parent: EncryptionKey
@@ -166,6 +164,7 @@
   - type: EncryptionKey
     channels:
     - Science
+    - Binary
     defaultChannel: Science
   - type: Sprite
     layers:

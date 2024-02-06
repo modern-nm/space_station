@@ -1,6 +1,7 @@
 - type: soundCollection
   id: LobbyMusic
   files:
+    - /Audio/Lobby/space_oddity.ogg
     - /Audio/Lobby/friday_night.ogg
     - /Audio/Lobby/The_Wrong_Party.ogg
     - /Audio/Lobby/thunderdome.ogg
@@ -11,6 +12,7 @@
     - /Audio/Lobby/singuloose.ogg
     - /Audio/Lobby/comet_haley.ogg
     - /Audio/Lobby/marhaba.ogg
+    - /Audio/Lobby/title2.ogg
     - /Audio/Lobby/title3.ogg
     - /Audio/Lobby/mod.flip-flap.ogg
     - /Audio/Lobby/Monument.ogg

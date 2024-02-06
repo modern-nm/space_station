@@ -8,7 +8,7 @@
 - type: entity
   parent: MobHuman
   id: MobHumanSyndicateAgent
-  name: Syndicate Agent
+  name: syndicate agent
   suffix: Human
   components:
     - type: Loadout
@@ -57,7 +57,7 @@
 
 # Space Ninja
 - type: entity
-  noSpawn: true
+  #noSpawn: true
   name: Space Ninja
   parent: MobHuman
   id: MobHumanSpaceNinja

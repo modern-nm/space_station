@@ -8,8 +8,6 @@
       - id: FlashlightSeclite
       - id: WeaponDisabler
         prob: 0.3
-      - id: ClothingHeadHatWarden
-      - id: ClothingHeadHatBeretWarden
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
@@ -24,7 +22,7 @@
       - id: HoloprojectorSecurity
       - id: ClothingHeadHatCapWardenAlt
       - id: ClothingOuterCoatWardenAlt
-      #- id: ClothingEyesHudSecurity
+      - id: ClothingEyesHudSecurity
 
 
 - type: entity
@@ -37,8 +35,6 @@
       - id: FlashlightSeclite
       - id: WeaponDisabler
         prob: 0.3
-      - id: ClothingHeadHatWarden
-      - id: ClothingHeadHatBeretWarden
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
@@ -52,7 +48,7 @@
       - id: HoloprojectorSecurity
       - id: ClothingHeadHatCapWardenAlt
       - id: ClothingOuterCoatWardenAlt
-      #- id: ClothingEyesHudSecurity
+      - id: ClothingEyesHudSecurity
 
 
 - type: entity
@@ -131,6 +127,7 @@
       - id: ClothingOuterCoatDetective
       - id: FlashlightSeclite
       - id: ForensicScanner
+      - id: LogProbeCartridge
       - id: BoxForensicPad
       - id: DrinkDetFlask
       - id: ClothingHandsGlovesForensic

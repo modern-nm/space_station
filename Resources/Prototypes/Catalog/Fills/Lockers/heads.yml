@@ -68,6 +68,8 @@
       - id: ADTUnderwearBoxCap
       # Sirena-Underwear-End
       - id: ADTSwimsuitCap
+      - id: ADTCapJumpsuitWarm
+      - id: ADTCapJumpskirtWarm
 
 - type: entity
   id: LockerCaptainFilled
@@ -111,6 +113,8 @@
       # Corvax-Resprite-End
       - id: ADTClothingEyesHudAdvanced #ADT mods
       - id: ADTSwimsuitCap
+      - id: ADTCapJumpsuitWarm
+      - id: ADTCapJumpskirtWarm
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -160,8 +164,6 @@
     contents:
       - id: ClothingOuterHardsuitEngineeringWhite
       - id: ClothingMaskBreath
-      - id: ClothingUniformJumpsuitChiefEngineerTurtle
-      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: OxygenTankFilled
       - id: NitrogenTankFilled
       - id: ClothingNeckCloakCe
@@ -197,8 +199,6 @@
       - id: ClothingEyesGlassesMeson
       - id: ClothingBeltChiefEngineerFilled
       - id: ClothingHandsGlovesColorYellow
-      - id: ClothingUniformJumpsuitChiefEngineerTurtle
-      - id: ClothingUniformJumpskirtChiefEngineerTurtle
       - id: CigarCase
         prob: 0.15
       - id: DoorRemoteEngineering
@@ -224,7 +224,7 @@
     contents:
       - id: MedkitFilled
       - id: ClothingHandsGlovesNitrile
-      #- name: ClothingEyesHudMedical #Removed until working properly
+      - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingCloakCmo
       - id: ClothingBackpackDuffelSurgeryFilled
@@ -261,7 +261,7 @@
     contents:
       - id: MedkitFilled
       - id: ClothingHandsGlovesNitrile
-      #- name: ClothingEyesHudMedical #Removed until working properly
+      - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingCloakCmo
       - id: ClothingBackpackDuffelSurgeryFilled
@@ -358,8 +358,8 @@
       - id: ClothingNeckCloakHos
       - id: ClothingOuterCoatHoSTrench
       - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
-      - id: ClothingUniformJumpskirtHoSAlt
-      - id: ClothingUniformJumpsuitHoSAlt
+      - id: ADTHOSJumpsuitWarm
+      - id: ADTHOSJumpskirtWarm
       - id: ClothingOuterHardsuitSecurityRed
       - id: ClothingMaskGasSwat
 #      - id: ClothingShoeSlippersDuck # Corvax-Resprite: Need more space for style
@@ -395,7 +395,7 @@
   components:
   - type: StorageFill
     contents:
-      #- id: ClothingEyesHudSecurity
+      - id: ClothingEyesHudSecurity
       - id: NesSecurityShuttleConsoleCircuitboard
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
@@ -405,8 +405,8 @@
       - id: ClothingNeckCloakHos
       - id: ClothingOuterCoatHoSTrench
       - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
-      - id: ClothingUniformJumpskirtHoSAlt
-      - id: ClothingUniformJumpsuitHoSAlt
+      - id: ADTHOSJumpskirtWarm
+      - id: ADTHOSJumpsuitWarm
       - id: ClothingUniformJumpsuitHoSBlue
         prob: 0.5
       - id: ClothingUniformJumpsuitHoSGrey
