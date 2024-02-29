@@ -1,5 +1,9 @@
 using Content.Server.Paper;
+using Content.Server.Power.Components;
+using Content.Server.Speech;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Examine;
+using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
@@ -13,6 +17,13 @@ public sealed partial class UniversalRecorderSystem : SharedUniversalRecorderSys
         base.Initialize();
         //SubscribeLocalEvent<UniversalRecorderComponent, UseInHandEvent>(OnRecorderUsedInHand);
         //SubscribeLocalEvent<UniversalRecorderComponent, GetVerbsEvent<AlternativeVerb>>(OnRecorderVerbs);
+
+        SubscribeLocalEvent<UniversalRecorderComponent, ComponentInit>(OnMicrophoneInit);
+        SubscribeLocalEvent<UniversalRecorderComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<UniversalRecorderComponent, ActivateInWorldEvent>(OnActivateMicrophone);
+        SubscribeLocalEvent<UniversalRecorderComponent, ListenEvent>(OnListen);
+        SubscribeLocalEvent<UniversalRecorderComponent, ListenAttemptEvent>(OnAttemptListen);
+        SubscribeLocalEvent<UniversalRecorderComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
     public override void PrintRecordedMessages(EntityUid uid, UniversalRecorderComponent component, EntityUid user)
