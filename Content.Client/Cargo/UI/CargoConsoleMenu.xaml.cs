@@ -92,7 +92,7 @@ namespace Content.Client.Cargo.UI
                 // else if category and not search
                 if (search.Length == 0 && _category == null ||
                     search.Length != 0 && prototype.Name.ToLowerInvariant().Contains(search) ||
-                    search.Length == 0 && _category != null && prototype.Category.Equals(_category))
+                    search.Length == 0 && _category != null && Loc.GetString(prototype.Category).Equals(_category)) // edited by modern-nm for ADT to translate productPrototype categories
                 {
                     var button = new CargoProductRow
                     {
@@ -121,7 +121,7 @@ namespace Content.Client.Cargo.UI
 
             foreach (var prototype in ProductPrototypes)
             {
-                if (!_categoryStrings.Contains(prototype.Category))
+                if (!_categoryStrings.Contains(Loc.GetString(prototype.Category))) // edited by modern-nm for ADT to translate productPrototype categories
                 {
                     _categoryStrings.Add(Loc.GetString(prototype.Category));
                 }
