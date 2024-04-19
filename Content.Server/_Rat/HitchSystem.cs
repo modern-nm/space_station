@@ -41,13 +41,13 @@ namespace Content.Server._Rat.Hitch
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<HitchComponent, DragDropDraggedEvent>(OnDragDrop);
+            SubscribeLocalEvent<HitchComponent, DragDropTargetEvent>(OnDragDrop);
         }
 
 
-        private void OnDragDrop(EntityUid uid, HitchComponent component, ref DragDropDraggedEvent args)
+        private void OnDragDrop(EntityUid uid, HitchComponent component, ref DragDropTargetEvent args)
         {
-            _pullingSystem.TryStartPull(args.User, args.Target);
+            _pullingSystem.TryStartPull(args.User, args.Dragged);
         }
 
         //private void OnCanDragDrop(EntityUid uid, MechComponent component, ref CanDropTargetEvent args)
